@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Ocean Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            background: linear-gradient(to bottom, #00bcd4, #008c96); 
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fish {
+            position: absolute;
+            animation: swim 20s infinite linear;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .fish1 { width: 6vw; top: 20%; left: -10%; animation-duration: 18s; }
+        .fish2 { width: 8vw; top: 40%; left: -15%; animation-duration: 22s; }
+        .fish3 { width: 10vw; top: 60%; left: -20%; animation-duration: 26s; }
+        .fish4 { width: 5vw; top: 80%; left: -25%; animation-duration: 30s; }
+
+        @keyframes swim {
+            0% { transform: translateX(-10vw); }
+            100% { transform: translateX(110vw); }
+        }
+
+        nav {
+            background-color: #003366;
+            padding: 15px 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav .navbar-brand {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #ffcc00;
+            margin-left: 10px;
+        }
+
+        nav .navbar-brand:hover {
+            color: #ffffff; 
+        }
+
+        nav .navbar-nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+
+        nav .navbar-nav a:hover {
+            color: #ffcc00; 
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .info-box {
+            background-color: rgba(0, 0, 0, 0.5); 
+            color: white;
+            padding: 50px;
+            border-radius: 10px;
+            margin: 50px auto;
+            width: 70%;
+            text-align: center;
+            min-height: 400px; 
+        }
+
+        .info-box h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .info-box p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .info-box img {
+            width: 200px; 
+            height: 200px;
+            border-radius: 8px;
+            margin: 20px;
+            object-fit: cover; 
+        }
+
+        /* Add yellow color and bold for DR Amani Shosha */
+        .supervisor {
+            font-weight: bold;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">Ocean Explorer</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Challenges.html">Challenges</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="lessons.html"><i class="fas fa-book-open"></i> Lessons</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About_Us.html"><i class="fas fa-info-circle"></i> About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact_Us.html"><i class="fas fa-phone-alt"></i> Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="info-box">
+        <h2>Project by: Mariam Abd Elmoneim & Rana Saad</h2>
+        <p>Under the supervision of <span class="supervisor">DR. Amani Shosha</span></p>
+        <div>
+            <img src="mariam.jpeg" alt="Mariam's Photo">
+            <img src="rana.jpeg" alt="Rana's Photo">
+        </div>
+        <p>This project is dedicated to teaching children programming through an interactive and gamified approach. With fun challenges and educational games, we aim to inspire kids to love learning and explore the world of coding in an exciting way!</p>
+    </div>
+
+    <!-- Animated Fish -->
+    <img src="fish1.png" alt="Fish 1" class="fish fish1">
+    <img src="fish2.png" alt="Fish 2" class="fish fish2">
+    <img src="fish3.png" alt="Fish 3" class="fish fish3">
+    <img src="fish4.png" alt="Fish 4" class="fish fish4">
+
+    <footer>
+        <p>&copy; 2025 Ocean Explorer | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

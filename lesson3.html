@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: Introduction to Conditions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #f0f8ff, #cce7ff);
+            color: #003366;
+            padding: 0;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+            position: relative;
+            height: 100%;
+            overflow-y: auto; /* Allow scroll for entire body */
+        }
+        .lesson-content {
+            padding: 40px 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .lesson-content h1 {
+            color: #003366;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: slideInFromTop 1s ease-out;
+        }
+        .lesson-content h3 {
+            color: #003366;
+            font-size: 1.6rem;
+            margin-top: 30px;
+            animation: slideInFromLeft 1s ease-out;
+        }
+        .lesson-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .code-snippet {
+            background-color: #003366;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 20px 0;
+        }
+        .interactive-btn {
+            background-color: #ffcc00;
+            color: #003366;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            animation: bounceIn 2s ease-in-out;
+        }
+        .interactive-btn:hover {
+            background-color: #ff9900;
+        }
+        .quiz-container {
+            margin-top: 30px;
+        }
+        .quiz-question {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .quiz-option {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .quiz-option:hover {
+            background-color: #ffcc00;
+        }
+        .quiz-result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #003366;
+        }
+
+        /* Fish Animation */
+        .fish {
+            position: absolute;
+            opacity: 0.4;
+            z-index: -1; /* Fish stay behind the content */
+            animation: swim 20s infinite linear;
+        }
+
+        .fish1 {
+            width: 8vw;
+            top: 20%;
+            left: -10%;
+            animation-duration: 20s;
+        }
+
+        .fish2 {
+            width: 10vw;
+            top: 40%;
+            left: -15%;
+            animation-duration: 25s;
+        }
+
+        .fish3 {
+            width: 12vw;
+            top: 60%;
+            left: -20%;
+            animation-duration: 30s;
+        }
+
+        .fish4 {
+            width: 7vw;
+            top: 80%;
+            left: -25%;
+            animation-duration: 35s;
+        }
+
+        @keyframes swim {
+            0% { transform: translateX(-10vw); }
+            100% { transform: translateX(110vw); }
+        }
+
+        /* Embedding YouTube Video */
+        iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            margin: 20px 0;
+        }
+
+        /* Styling for correct and incorrect answers */
+        input[type="radio"]:checked + label.correct {
+            background-color: green;
+            color: white;
+            animation: celebration 2s ease-in-out;
+        }
+
+        input[type="radio"]:checked + label.incorrect {
+            background-color: red;
+            color: white;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        /* Celebration Animation */
+        @keyframes celebration {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Shake animation for incorrect answers */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fish Animation -->
+    <img src="fish1.png" class="fish fish1" alt="Fish 1">
+    <img src="fish2.png" class="fish fish2" alt="Fish 2">
+    <img src="fish3.png" class="fish fish3" alt="Fish 3">
+    <img src="fish4.png" class="fish fish4" alt="Fish 4">
+
+    <div class="container lesson-content">
+        <h1>Lesson 3: Introduction to Conditions</h1>
+        <p>In this lesson, you'll learn how to use conditions (if statements) to control the flow of your program based on different scenarios.</p>
+
+        <h3>What is a Condition?</h3>
+        <p>A condition allows the program to decide what action to take based on whether something is true or false. Let’s see an example:</p>
+
+        <div class="code-snippet">
+            <p><strong>Example in Python:</strong></p>
+            <pre>
+                age = 18
+                if age >= 18:
+                    print("You are an adult")
+                else:
+                    print("You are a minor")
+            </pre>
+        </div>
+
+        <h3>Your Task:</h3>
+        <p>Try writing a condition in your Python environment. You can use the code above and change the age to see how the result changes!</p>
+
+        <!-- Embedding YouTube Video -->
+        <h3>Watch the Video:</h3>
+        <div class="video-container" style="text-align:center;">
+            <iframe src="https://www.youtube.com/embed/ePXoxLbt0JM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <h3>Quiz: Test Your Knowledge!</h3>
+        <div class="quiz-container">
+            <p class="quiz-question">What is the correct way to write an if condition in Python?</p>
+            <input type="radio" id="answer1" name="quiz" />
+            <label for="answer1" class="quiz-option incorrect">if (age >= 18):</label>
+
+            <input type="radio" id="answer2" name="quiz" />
+            <label for="answer2" class="quiz-option incorrect">if age = 18:</label>
+
+            <input type="radio" id="answer3" name="quiz" />
+            <label for="answer3" class="quiz-option correct">if age >= 18:</label>
+        </div>
+
+        <div class="quiz-result">Select an answer to check if you're correct!</div>
+
+        <!-- Since it's the last lesson, no "Next Lesson" button -->
+        <a href="index.html">
+            <button class="interactive-btn">Back to Homepage</button>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ocean Explorer | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
