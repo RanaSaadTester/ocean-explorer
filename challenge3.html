@@ -1,297 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conditional Statements Challenge</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Fredoka One', 'Poppins', sans-serif;
-            background: linear-gradient(to bottom, #6ec9f0, #eef9ff);
-            color: #333;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 1;
-        }
-
-        h1 {
-            text-align: center;
-            color: #4caf50;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
-
-        /* Fish animation */
-        .fish {
-            position: fixed;
-            width: 130px;
-            height: 130px;
-            opacity: 0.7;
-            pointer-events: none;
-            animation: swim 20s ease-in-out infinite;
-        }
-
-        @keyframes swim {
-            0% { transform: translateX(-150px) translateY(0); }
-            25% { transform: translateX(10vw) translateY(15vh); }
-            50% { transform: translateX(50vw) translateY(30vh); }
-            75% { transform: translateX(90vw) translateY(45vh); }
-            100% { transform: translateX(110vw) translateY(60vh); }
-        }
-
-        .fish1 { animation-duration: 15s; animation-delay: 0s; }
-        .fish2 { animation-duration: 18s; animation-delay: 2s; transform: translateY(20vh); }
-        .fish3 { animation-duration: 20s; animation-delay: 4s; transform: translateY(30vh); }
-        .fish4 { animation-duration: 22s; animation-delay: 6s; transform: translateY(40vh); }
-
-        .question-box {
-            margin-bottom: 20px;
-            padding: 20px;
-            background: #e3f2fd;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .question-box h3 {
-            font-size: 1.2rem;
-            color: #1e88e5;
-            margin-bottom: 15px;
-        }
-
-        pre {
-            background: #f1f8e9;
-            padding: 10px;
-            border-radius: 8px;
-            color: #43a047;
-            font-size: 1rem;
-        }
-
-        .options label {
-            display: block;
-            padding: 10px;
-            margin: 5px 0;
-            background-color: #bbdefb;
-            border: 1px solid #64b5f6;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .options label:hover {
-            background-color: #90caf9;
-        }
-
-        .options input[type="radio"] {
-            display: none;
-        }
-
-        .options input[type="radio"]:checked + label {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Correct answer animation */
-        .options input[type="radio"].correct:checked + label {
-            background-color: #4caf50;
-            color: white;
-        }
-
-        /* Wrong answer animation */
-        .options input[type="radio"].wrong:checked + label {
-            background-color: #e57373;
-            color: white;
-            animation: shake 0.5s;
-        }
-
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(0); }
-        }
-        /* Button Styles */
-        .interactive-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #4caf50;
-            color: white;
-            padding: 15px 30px;
-            text-align: center;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .interactive-btn:hover {
-            background-color: #45a049;
-        }
-
-        .interactive-btn:active {
-            background-color: #388e3c;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- Fish Animation -->
-    <img src="assets/fish1.png" class="fish fish1" alt="Fish 1">
-    <img src="assets/fish2.png" class="fish fish2" alt="Fish 2">
-    <img src="assets/fish3.png" class="fish fish3" alt="Fish 3">
-    <img src="assets/fish4.png" class="fish fish4" alt="Fish 4">
+    <div class="challenges-body">
+        <!-- Fish Animation -->
+        <img src="assets/fish1.png" class="fish fish1" alt="Fish 1">
+        <img src="assets/fish2.png" class="fish fish2" alt="Fish 2">
+        <img src="assets/fish3.png" class="fish fish3" alt="Fish 3">
+        <img src="assets/fish4.png" class="fish fish4" alt="Fish 4">
 
-    <div class="container">
-        <h1>Conditional Statements Challenge</h1>
+        <div class="challenges-container">
+            <h1 class="challenges-h1">Conditional Statements Challenge</h1>
 
-        <!-- Question 1 -->
-        <div class="question-box">
-            <h3>1. What will the following code print?</h3>
-            <pre>
+            <!-- Question 1 -->
+            <div class="challenges-question-box">
+                <h3>1. What will the following code print?</h3>
+                <pre class="challenges-pre">
 if 10 > 5:
     print("Yes")
 else:
     print("No")
             </pre>
-            <div class="options">
-                <input type="radio" id="q1a1" name="q1" class="correct">
-                <label for="q1a1">Yes</label>
+                <div class="challenges-options">
+                    <input type="radio" id="q1a1" name="q1" class="correct">
+                    <label for="q1a1">Yes</label>
 
-                <input type="radio" id="q1a2" name="q1" class="wrong">
-                <label for="q1a2">No</label>
+                    <input type="radio" id="q1a2" name="q1" class="wrong">
+                    <label for="q1a2">No</label>
 
-                <input type="radio" id="q1a3" name="q1" class="wrong">
-                <label for="q1a3">Error</label>
+                    <input type="radio" id="q1a3" name="q1" class="wrong">
+                    <label for="q1a3">Error</label>
+                </div>
             </div>
-        </div>
 
-        <!-- Question 2 -->
-        <div class="question-box">
-            <h3>2. What is the output of this code?</h3>
-            <pre>
+            <!-- Question 2 -->
+            <div class="challenges-question-box">
+                <h3>2. What is the output of this code?</h3>
+                <pre class="challenges-pre">
 x = 3
 if x == 3:
     print("Equal")
 else:
     print("Not equal")
             </pre>
-            <div class="options">
-                <input type="radio" id="q2a1" name="q2" class="correct">
-                <label for="q2a1">Equal</label>
+                <div class="challenges-options">
+                    <input type="radio" id="q2a1" name="q2" class="correct">
+                    <label for="q2a1">Equal</label>
 
-                <input type="radio" id="q2a2" name="q2" class="wrong">
-                <label for="q2a2">Not equal</label>
+                    <input type="radio" id="q2a2" name="q2" class="wrong">
+                    <label for="q2a2">Not equal</label>
 
-                <input type="radio" id="q2a3" name="q2" class="wrong">
-                <label for="q2a3">Error</label>
+                    <input type="radio" id="q2a3" name="q2" class="wrong">
+                    <label for="q2a3">Error</label>
+                </div>
             </div>
-        </div>
 
-        <!-- Question 3 -->
-        <div class="question-box">
-            <h3>3. What will be printed by this code?</h3>
-            <pre>
+            <!-- Question 3 -->
+            <div class="challenges-question-box">
+                <h3>3. What will be printed by this code?</h3>
+                <pre class="challenges-pre">
 if 3 > 2 and 2 < 5:
     print("True")
 else:
     print("False")
             </pre>
-            <div class="options">
-                <input type="radio" id="q3a1" name="q3" class="correct">
-                <label for="q3a1">True</label>
+                <div class="challenges-options">
+                    <input type="radio" id="q3a1" name="q3" class="correct">
+                    <label for="q3a1">True</label>
 
-                <input type="radio" id="q3a2" name="q3" class="wrong">
-                <label for="q3a2">False</label>
+                    <input type="radio" id="q3a2" name="q3" class="wrong">
+                    <label for="q3a2">False</label>
 
-                <input type="radio" id="q3a3" name="q3" class="wrong">
-                <label for="q3a3">Error</label>
+                    <input type="radio" id="q3a3" name="q3" class="wrong">
+                    <label for="q3a3">Error</label>
+                </div>
             </div>
-        </div>
 
-        <!-- Question 4 -->
-        <div class="question-box">
-            <h3>4. What will this code print?</h3>
-            <pre>
+            <!-- Question 4 -->
+            <div class="challenges-question-box">
+                <h3>4. What will this code print?</h3>
+                <pre class="challenges-pre">
 x = 7
 if x % 2 == 0:
     print("Even")
 else:
     print("Odd")
             </pre>
-            <div class="options">
-                <input type="radio" id="q4a1" name="q4" class="wrong">
-                <label for="q4a1">Even</label>
+                <div class="challenges-options">
+                    <input type="radio" id="q4a1" name="q4" class="wrong">
+                    <label for="q4a1">Even</label>
 
-                <input type="radio" id="q4a2" name="q4" class="correct">
-                <label for="q4a2">Odd</label>
+                    <input type="radio" id="q4a2" name="q4" class="correct">
+                    <label for="q4a2">Odd</label>
 
-                <input type="radio" id="q4a3" name="q4" class="wrong">
-                <label for="q4a3">Error</label>
+                    <input type="radio" id="q4a3" name="q4" class="wrong">
+                    <label for="q4a3">Error</label>
+                </div>
             </div>
-        </div>
 
-        <!-- Question 5 -->
-        <div class="question-box">
-            <h3>5. What does this code output?</h3>
-            <pre>
+            <!-- Question 5 -->
+            <div class="challenges-question-box">
+                <h3>5. What does this code output?</h3>
+                <pre class="challenges-pre">
 x = 5
 if x > 3 or x < 2:
     print("True")
 else:
     print("False")
             </pre>
-            <div class="options">
-                <input type="radio" id="q5a1" name="q5" class="correct">
-                <label for="q5a1">True</label>
+                <div class="challenges-options">
+                    <input type="radio" id="q5a1" name="q5" class="correct">
+                    <label for="q5a1">True</label>
 
-                <input type="radio" id="q5a2" name="q5" class="wrong">
-                <label for="q5a2">False</label>
+                    <input type="radio" id="q5a2" name="q5" class="wrong">
+                    <label for="q5a2">False</label>
 
-                <input type="radio" id="q5a3" name="q5" class="wrong">
-                <label for="q5a3">Error</label>
+                    <input type="radio" id="q5a3" name="q5" class="wrong">
+                    <label for="q5a3">Error</label>
+                </div>
             </div>
-        </div>
 
-        <!-- Question 6 -->
-        <div class="question-box">
-            <h3>6. What will be printed by this code?</h3>
-            <pre>
+            <!-- Question 6 -->
+            <div class="challenges-question-box">
+                <h3>6. What will be printed by this code?</h3>
+                <pre class="challenges-pre">
 if 4 != 5:
     print("True")
 else:
     print("False")
             </pre>
-            <div class="options">
-                <input type="radio" id="q6a1" name="q6" class="correct">
-                <label for="q6a1">True</label>
+                <div class="challenges-options">
+                    <input type="radio" id="q6a1" name="q6" class="correct">
+                    <label for="q6a1">True</label>
 
-                <input type="radio" id="q6a2" name="q6" class="wrong">
-                <label for="q6a2">False</label>
+                    <input type="radio" id="q6a2" name="q6" class="wrong">
+                    <label for="q6a2">False</label>
 
-                <input type="radio" id="q6a3" name="q6" class="wrong">
-                <label for="q6a3">Error</label>
+                    <input type="radio" id="q6a3" name="q6" class="wrong">
+                    <label for="q6a3">Error</label>
+                </div>
             </div>
+
         </div>
-        
+        <a href="index.html">
+            <button class="challenges-btn">Back Home</button>
+        </a>
     </div>
-    <a href="index.html">
-        <button class="interactive-btn">Back Home</button>
-    </a>
 </body>
+
 </html>

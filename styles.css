@@ -22,6 +22,19 @@ body {
     animation: fadeIn 2s ease-in-out;
 }
 
+.lessons-body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #f0f8ff, #cce7ff);
+    color: #003366!important;
+    padding: 0;
+    margin: 0;
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+    height: 100%;
+    overflow-y: auto; /* Allow scroll for entire body */
+    z-index: 1;
+}
+
 /* Navigation-bar */
 nav {
     background-color: #003366;
@@ -76,6 +89,11 @@ p {
     font-size: 1.2rem;
     color: #f4f4f4;
     margin-bottom: 40px;
+}
+
+.p-lessons {
+    color: #003366!important;
+    margin-bottom: 0;
 }
 
 /* Content Area */
@@ -262,6 +280,174 @@ p {
     box-shadow: none;
 }
 
+.lesson-content {
+    padding: 40px 20px;
+    animation: fadeIn 3s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+.lesson-content h1 {
+    color: #003366;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: slideInFromTop 1s ease-out;
+}
+.lesson-content h3 {
+    color: #003366;
+    font-size: 1.6rem;
+    margin-top: 30px;
+    animation: slideInFromLeft 1s ease-out;
+}
+.lesson-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    animation: fadeIn 3s ease-in-out;
+}
+.code-snippet {
+    background-color: #003366;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: monospace;
+    margin: 20px 0;
+}
+
+
+
+
+.challenges-body {
+    font-family: 'Fredoka One', 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #6ec9f0, #eef9ff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.challenges-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.challenges-h1 {
+    text-align: center;
+    color: #4caf50;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.challenges-question-box {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #e3f2fd;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.challenges-question-box h3 {
+    font-size: 1.2rem;
+    color: #1e88e5;
+    margin-bottom: 15px;
+}
+
+.challenges-pre {
+    background: #f1f8e9;
+    padding: 10px;
+    border-radius: 8px;
+    color: #43a047;
+    font-size: 1rem;
+}
+
+.challenges-options label {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #bbdefb;
+    border: 1px solid #64b5f6;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.challenges-options label:hover {
+    background-color: #90caf9;
+}
+
+.challenges-options input[type="radio"] {
+    display: none;
+}
+
+.challenges-options input[type="radio"]:checked + label {
+    position: relative;
+    z-index: 1;
+}
+
+/* Correct answer animation */
+.challenges-options input[type="radio"].correct:checked + label {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Wrong answer animation */
+.challenges-options input[type="radio"].wrong:checked + label {
+    background-color: #e57373;
+    color: white;
+    animation: shake 0.5s;
+}
+
+
+
+.interactive-btn {
+    background-color: #ffcc00;
+    color: #003366;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    animation: bounceIn 2s ease-in-out;
+}
+.interactive-btn:hover {
+    background-color: #ff9900;
+}
+
+/* Button Styles */
+.challenges-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.challenges-btn:hover {
+    background-color: #45a049;
+}
+
+.challenges-btn:active {
+    background-color: #388e3c;
+}
 
 /* buttons */
 .btn {
@@ -295,9 +481,108 @@ p {
     transform: scale(1.1);
 }
 
+/* Embedding YouTube Video */
+iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin: 20px 0;
+}
+
+/* Styling for correct and incorrect answers */
+input[type="radio"]:checked + label.correct {
+    background-color: green;
+    color: white;
+    animation: celebration 2s ease-in-out;
+}
+
+input[type="radio"]:checked + label.incorrect {
+    background-color: red;
+    color: white;
+    animation: shake 0.5s ease-in-out;
+}
+
+.quiz-container {
+    margin-top: 30px;
+}
+.quiz-question {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.quiz-option {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    animation: fadeIn 2s ease-in-out;
+}
+.quiz-option:hover {
+    background-color: #ffcc00;
+}
+.quiz-result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #003366;
+}
+
+
+.contact-body {
+    position: relative;
+    z-index: 1;
+}
+
+.thank-you-body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: linear-gradient(to bottom, #00bcd4, #008c96);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.thank-you-box {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+    width: 70%;
+    min-height: 300px;
+}
+
+.thank-you-box h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.thank-you-box p {
+    font-size: 1.2rem;
+}
+
+.btn-back {
+    background-color: #ffcc00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    background-color: #ffaa00;
+}
+
 /* Fish Animation */
 .fish {
     position: absolute;
+    opacity: 0.4;
     animation: swim 15s infinite linear;
     z-index: 0;
 }
@@ -407,11 +692,17 @@ footer a:hover {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-
 @keyframes shake {
     0% { transform: translateX(0); }
     25% { transform: translateX(-5px); }
     50% { transform: translateX(5px); }
     75% { transform: translateX(-5px); }
     100% { transform: translateX(0); }
+}
+
+/* Celebration Animation */
+@keyframes celebration {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
 }
