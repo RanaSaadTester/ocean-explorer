@@ -1,0 +1,417 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: linear-gradient(to bottom, #00bcd4, #008c96);
+    margin: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    opacity: 0; 
+    animation: fadeIn 1s forwards; 
+}
+
+.index-body {
+    background: radial-gradient(circle, #ff7a00, #ffcc00, #00aaff);
+    margin: 0;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Navigation-bar */
+nav {
+    background-color: #003366;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav .navbar-brand {
+    font-size: 1.9rem;
+    font-weight: bold;
+    padding-left: 20px;
+    transition: color 0.3s ease-in-out;
+    color: #ffcc00;
+}
+
+nav .navbar-brand:hover {
+    color: #ffffff;
+}
+
+nav .navbar-nav a {
+    color: #ffffff;
+    margin: 0 15px;
+    font-size: 1.1rem;
+}
+
+nav .navbar-nav a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* Container for Content */
+.index-content {
+    text-align: center;
+    padding: 40px 30px;
+    background: rgba(0, 51, 102, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    width: 80%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: #ffcc00;
+    margin-bottom: 30px;
+    font-weight: bold;
+    animation: slideIn 1s ease-in-out;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #f4f4f4;
+    margin-bottom: 40px;
+}
+
+/* Content Area */
+.content-area {
+    text-align: center;
+    position: relative;
+    height: 85vh;
+    z-index: 1;
+    padding: 50px 0;
+    background-color: rgba(0, 51, 102, 0.7); 
+    animation: slideUp 1s ease-out; /* Slide-in effect for content */
+}
+
+
+/* Cards */
+/* Lesson Cards */
+.lesson-card {
+    background-color: #003366;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInUp 0.5s forwards;
+}
+
+.lesson-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.lesson-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.lesson-card:hover img {
+    transform: scale(1.05);
+}
+
+.lesson-card-body {
+    padding: 20px;
+}
+
+.lesson-card-body h5 {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    display: flex;
+    align-items: center;
+}
+
+.lesson-card-body h5 i {
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+.lesson-card-body p {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.lesson-card a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+/* Challenge Cards */
+.challenge-card {
+    background-color: #003366;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    animation: slideUp 1s ease-out;
+}
+
+.challenge-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.challenge-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.challenge-card-body {
+    padding: 20px;
+}
+
+.challenge-card-body h5 {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    display: flex;
+    align-items: center;
+}
+
+.challenge-card-body h5 i {
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+.challenge-card-body p {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+/* Info Box */
+.info-box {
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+    margin: 5px auto;
+    width: 70%;
+    text-align: center;
+    min-height: 400px; 
+}
+
+.info-box h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.info-box p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.info-box img {
+    width: 200px; 
+    height: 200px;
+    border-radius: 8px;
+    margin: 20px;
+    object-fit: cover; 
+}
+
+/* Add yellow color and bold for DR Amani Shosha */
+.supervisor {
+    font-weight: bold;
+    color: yellow;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: rgba(0, 51, 102, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(4, 4, 4, 0.944);
+    margin-top: 50px;
+}
+
+.contact-form h2 {
+    color: #ffcc00;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-control {
+    background-color: #003366;
+    border: none;
+    color: rgb(255, 255, 255); 
+    margin-bottom: 15px;
+}
+
+.form-control::placeholder {
+    color: #cccccc;
+}
+
+.form-control:focus {
+    
+    border-color: #ffcc00;
+    box-shadow: none;
+}
+
+
+/* buttons */
+.btn {
+    font-size: 1.25rem;
+    padding: 15px 25px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 255px;
+    transition: transform 0.3s ease;
+}
+
+.btn-warning {
+    background-color: #ffcc00;
+    color: #003366;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #ff9900;
+    transform: scale(1.1);
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+    transform: scale(1.1);
+}
+
+/* Fish Animation */
+.fish {
+    position: absolute;
+    animation: swim 15s infinite linear;
+    z-index: 0;
+}
+
+.fish1 {
+    width: 10vw;
+    top: 15%;
+    left: -15%;
+    animation-duration: 15s;
+}
+
+.fish2 {
+    width: 12vw;
+    top: 35%;
+    left: -20%;
+    animation-duration: 18s;
+}
+
+.fish3 {
+    width: 9vw;
+    top: 55%;
+    left: -25%;
+    animation-duration: 20s;
+}
+
+.fish4 {
+    width: 11vw;
+    top: 75%;
+    left: -30%;
+    animation-duration: 25s;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    height: 40px;
+    padding-top: 9px;
+    background-color: #003366;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 10px;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+@keyframes swim {
+    0% {
+        transform: translateX(-10vw);
+    }
+
+    100% {
+        transform: translateX(110vw);
+    }
+}
+
+/* Animation for page fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation for header slide-in */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for footer fade-in */
+@keyframes fadeInFooter {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation for content-area slide-up */
+@keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Fade-In Effect for Cards */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
